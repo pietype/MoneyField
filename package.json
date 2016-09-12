@@ -1,0 +1,44 @@
+{
+  "name": "money-field-demo",
+  "version": "0.0.0",
+  "description": "react input demo",
+  "main": "server.js",
+  "scripts": {
+    "watch": "npm run watch-js & npm run watch-less & npm run quick-serve",
+    "build-js": "./node_modules/.bin/browserify -t babelify src/index.js -o public/bundle.js --debug --verbose",
+    "build-less": "cd src && lessc index.less ../public/styles.css",
+    "watch-js": "watchify --extension=.js -t babelify src/index.js -o public/bundle.js --debug --verbose",
+    "watch-less": "cd src && catw -c 'lessc -' 'index.less' -o ../public/styles.css -v",
+    "quick-serve": "babel-node server.js",
+    "test": "babel-node tests/runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/Users/grzegorz/Projects/Tig/remotes/sigmapoint/champions-react.git"
+  },
+  "engines": {
+    "node": "5.6.0",
+    "npm": "2.14.7"
+  },
+  "author": "Grzegorz Sikorski",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel": "6.5.1",
+    "babel-cli": "6.5.1",
+    "babel-preset-es2015": "6.5.0",
+    "babel-preset-react": "6.5.0",
+    "babelify": "7.2.0",
+    "browserify": "13.0.0",
+    "catw": "1.0.1",
+    "expect": "1.14.0",
+    "express": "4.13.4",
+    "less": "2.6.0",
+    "watchify": "3.7.0"
+  },
+  "dependencies": {
+    "react": "0.14.7",
+    "react-dom": "0.14.7",
+    "react-redux": "4.4.0",
+    "redux": "3.3.1"
+  }
+}
